@@ -12,27 +12,28 @@
 </head>
 <body>
 
-  <!-- ========= -->
-  <!-- <div id="container">Loading...</div> -->
-  <div class="container">
-    <div class="app">
+    <div class="app container">
       <div class="jumbotron app-header">
       <h1>My Super Awesome Photos</h1>
       </div>
 
-      <div class="app-body">
-        <div class="list-area">
+      <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-4 list-area">
+        <!-- <div class="list-item-area"></div> -->
         </div> <!-- /list-area -->
 
-        <div class="photo-area">
-          <div class="photo"></div>
-          <div class="caption"></div>
+        <div class="col-md-8 photo-area">
+          <!-- <div class="photo"></div> -->
+          <!-- <div class="caption"></div> -->
         </div> <!-- /photo-area -->
 
-      </div> <!-- /app-body -->
+      </div> <!-- /row app-body -->
 
+      </div>
     </div> <!-- /app -->
-  </div>
 
   <!-- Libraries -->
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -53,8 +54,6 @@
     <script src="app/views/ListItemView.js" type="text/javascript"></script>
   <script src="app/views/ListView.js" type="text/javascript"></script>
 
-
-
   <!-- Launch App -->
   <script>
     var norway = new Photo({
@@ -69,16 +68,32 @@
       image: "http://assets.fodors.com/destinations/4636/beach-makena-cove-south-shore-maui-maui-hawaii-usa_main.jpg"
     });
 
-    var myAlbum = new Album([norway, maui], {model: Photo});
+    var tufa = new Photo({
+      title: "Tufa",
+      caption: "Tufa at Night by Romain Guy",
+      image: "https://lh3.googleusercontent.com/-YifreVFp77c/UMoTI_wpC6I/AAAAAAAAMRw/6VACc_ubeaU/w2048-h1312/Tufa%2Bat%2BNight.jpg"
+    });
 
-    // var albumView = new AlbumView({collection: myAlbum});
+    var island = new Photo({
+      title: "Lost Island",
+      caption: "Lost Island, San Gregorio, by Romain Guy",
+      image: "https://lh3.googleusercontent.com/-7WqXcxOUVVA/VW1ct0NIx1I/AAAAAAAAQKE/GUcb_c0UAzc/w1719-h1149-no/Lost%2BIsland.jpg"
+    });
 
-    // new PhotoView({model: maui});
-    // new PhotoView({model: maui});
-    // new ListView({collection: myAlbum});
+    var winter = new Photo({
+      title: "Winter Scene",
+      caption: "Winter is coming, somewhere",
+      image: "http://buzzerg.com/wp-content/uploads/8589130444382-winter-landscape-wallpaper-hd.jpg"
+    });
+
+    var myAlbum = new Album([norway, maui, tufa, island, winter], {model: Photo});
+
+    new ListView({collection: myAlbum});
+    new ListItemView({model: island});
     new ListItemView({model: maui});
     new ListItemView({model: norway});
-
+    new ListItemView({model: tufa});
+    new ListItemView({model: winter});
 
   </script>
   
