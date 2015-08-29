@@ -1,4 +1,5 @@
 var RatingView = Backbone.View.extend({
+  // collection: Album,
   model: Photo,
   // el: $('.dropdown-menu a'),
   el: $('.dropdown-menu li a'),
@@ -26,19 +27,10 @@ var RatingView = Backbone.View.extend({
       .find('[data-bind="label"]').text($target.text())
         .end()
           .children('.dropdown-toggle').dropdown('toggle');
-
-    console.log(this.model);
-
-  //   $( "select" )
-  // .change(function () {
-  //   var str = "";
-  //   $( "select option:selected" ).each(function() {
-  //     str += $( this ).text() + " ";
-  //   });
-  //   $( "div" ).text( str );
-  // })
-  // .change();
-    this.model.setRating($target.html());
+          // console.log($target.html());
+    // return $target.html();
+console.log(this.model);
+    // this.model.setRating($target.text());
   }
 
 });
