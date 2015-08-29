@@ -1,5 +1,5 @@
 var AppView = Backbone.View.extend({
-  el: $(".app"),
+  el: $('.app'),
   initialize: function() {
     this.photo = new PhotoView();
     this.render();
