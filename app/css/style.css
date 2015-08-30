@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  padding-bottom: 50px;
+}
+
 img {
   /*width: 500px;*/
   width: 100%;
@@ -19,6 +23,25 @@ img {
   text-align: center;
 }
 
+.caption {
+  margin-top: 10px; 
+}
+
+.count {
+  color: #BBB;
+  font-weight: bold;  
+}
+
 .list-area {
   /*background-color: blue;*/
+}
+
+.list-header {
+  font-weight: bold;
+}
+
+.btn-group {
+  float: right;
+  padding-right: 20px;
+  margin-bottom: 10px;
 }

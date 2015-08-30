@@ -8,7 +8,8 @@ var Photo = Backbone.Model.extend({
   },
 
   initialize: function() {
-    new RatingView({model: this});
+    // initialize rating view in the collection
+    // new RatingView({model: this});
     new OrderCountView({model: this});
   },
 

@@ -7,7 +7,7 @@ var ListView = Backbone.View.extend({
   },
 
   render: function(){
-    this.$el.html('<div>Photos in this Album</div>');
+    this.$el.html('<div class="list-header">Photos in this Album</div>');
   }
 
 });

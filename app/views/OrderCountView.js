@@ -3,9 +3,9 @@ var OrderCountView = Backbone.View.extend({
   // el: $('.photo-area'),
   template: _.template('<div><%= orderCount %></div>'),
 
-  events: {
-    'click a': 'showCount'
-  },
+  // events: {
+  //   'click a': 'showCount'
+  // },
 
   // initialize: function() {
   //   this.render();  

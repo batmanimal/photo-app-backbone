@@ -2,10 +2,12 @@
 var Album = Backbone.Collection.extend({
 	model: Photo,
   initialize: function() {
-        new RatingView({model: this});
-
-    // this.on('updateView', function() {
-    //   // console.log('updateView detected in Album coll');
-    //   this.trigger('updateAlbumView', this);
+    new ListView({model: this});
+    new RatingView({model: this});
+  },
+  setRating: function(rating) {
+    // rating is passed here - need to bind to the target model 
+    console.log('rating passed to coll: ' + rating);
+    this.set('rating', rating);
   }
 });
