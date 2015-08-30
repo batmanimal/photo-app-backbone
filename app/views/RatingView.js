@@ -2,6 +2,8 @@ var RatingView = Backbone.View.extend({
   collection: Album,
   // model: Photo,
   // el: $('.dropdown-menu a'),
+    // el: $('.photo-area'),
+
   el: $('.dropdown-menu li a'),
   // tagname: 'href',      
   // template: _.template('<a>test</a>'),
@@ -12,6 +14,7 @@ var RatingView = Backbone.View.extend({
 
   updateRating: function(e) {
     var $target = $(e.currentTarget);
+    console.log(this.model)
     // console.log($target);
     $target.closest('.btn-group')
       .find('[data-bind="label"]').text($target.text())
