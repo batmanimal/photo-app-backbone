@@ -1,6 +1,6 @@
-## My Super Awesome Photos
+# PhotoMVC - Backbone 
 
-###Photo album app, built using Backbone
+###My Super Awesome Photos
 
 Screenshot
 
