@@ -14,7 +14,7 @@ var RatingView = Backbone.View.extend({
 
   updateRating: function(e) {
     var $target = $(e.currentTarget);
-    console.log(this.model)
+    // console.log(this.model)
     // console.log($target);
     $target.closest('.btn-group')
       .find('[data-bind="label"]').text($target.text())
@@ -22,7 +22,8 @@ var RatingView = Backbone.View.extend({
           .children('.dropdown-toggle').dropdown('toggle');
           // console.log($target.text());
     // return $target.html();
-    this.model.setRating($target.text());
+    this.model.setRating($target.text(), this.model.get('title'));
+    console.log('model title', this.model.get('title'));
   }
 
 });

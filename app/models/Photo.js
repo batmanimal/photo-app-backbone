@@ -19,15 +19,19 @@ var Photo = Backbone.Model.extend({
 
     this.trigger('updatePhotoView', this);
 
-    this.set('rating', this.get('rating'));
-    
+    // this.set('rating', this.get('rating'));
+
+    this.trigger('updateRating', this);
   },
 
-  setRating: function(rating) {
-    console.log('rating passed to model: ' + rating);
-    this.trigger('updateRating', this);
-
+  setRating: function(rating, title) {
+    // console.log('rating passed to model: ' + rating);
+    console.log('title inside model setRating', title);
     this.set('rating', rating);
+        console.log('rating inside model setRating', rating);
+
+    // this.trigger('emitRating', this);
+    // this.set('title', title);
   }
 
 });
