@@ -8,12 +8,14 @@ var Album = Backbone.Collection.extend({
   initialize: function() {
     new ListView({model: this});
     // this.on('updateRating', this.setRating);
-    this.on('change:rating', this.setPhotoRating);
+    // this.on('change:rating', this.setPhotoRating);
     // new RatingView({model: this});
+
   },
   setPhotoRating: function(rating) {
     var that = this;
     this.each(function(photo){
+      console.log("setPhotoRating called inside collection");
       if(photo.title = that.get('title')){
         photo.set('rating', that.get('rating'));
       }
