@@ -13,6 +13,7 @@ var ListItemView = Backbone.View.extend({
 
   broadcastClick: function() {
     this.model.updateView();
+    this.model.setRating();
   },
 
   render: function(){

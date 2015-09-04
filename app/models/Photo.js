@@ -10,25 +10,38 @@ var Photo = Backbone.Model.extend({
   initialize: function() {
     // initialize rating view in the collection
     // new RatingView({model: this});
+    // this.bind('change', this.attributesChanged);
     new OrderCountView({model: this});
   },
 
+  // attributesChanged: function() {
+  //       this.set('rating', rating);
+
+  //   var changedRating = this.get('rating');
+  //   this.trigger('changed', changedRating);
+  // }
+
   updateView: function() {
     new PhotoView({model: this});
+    this.set('title', this.attributes.title);
+    console.log(this.attributes.title);
+    // console.log(this);
     new RatingView({model: this});
 
-    this.trigger('updatePhotoView', this);
+    // this.trigger('updatePhotoView', this);
 
     // this.set('rating', this.get('rating'));
 
-    this.trigger('updateRating', this);
+    // this.trigger('updateRating', this);
   },
+
+  // updateRating: function
 
   setRating: function(rating, title) {
     // console.log('rating passed to model: ' + rating);
-    console.log('title inside model setRating', title);
+    // console.log('title inside model setRating', title);
     this.set('rating', rating);
-        console.log('rating inside model setRating', rating);
+        console.log('title and rating', title, rating);
 
     // this.trigger('emitRating', this);
     // this.set('title', title);

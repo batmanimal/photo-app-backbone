@@ -1,5 +1,5 @@
 var RatingView = Backbone.View.extend({
-  collection: Album,
+  // collection: Album,
   // model: Photo,
   // el: $('.dropdown-menu a'),
     // el: $('.photo-area'),
@@ -12,7 +12,13 @@ var RatingView = Backbone.View.extend({
     'click': 'updateRating'
   },
 
+  initialize: function() {
+    this.model.bind("ratingUpdated", this.updateRating);
+  },
+
+
   updateRating: function(e) {
+    // e.preventDefault();
     var $target = $(e.currentTarget);
     // console.log(this.model)
     // console.log($target);
@@ -22,8 +28,9 @@ var RatingView = Backbone.View.extend({
           .children('.dropdown-toggle').dropdown('toggle');
           // console.log($target.text());
     // return $target.html();
+    // this.model.set({rating: $target.text()});
     this.model.setRating($target.text(), this.model.get('title'));
-    console.log('model title', this.model.get('title'));
+    // console.log('model title', this.model.get('title'));
   }
 
 });
