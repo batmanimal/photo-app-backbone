@@ -25,6 +25,8 @@ Screenshot
 - BackboneJS
 - Bootstrap 
 
+KNOWN ISSUE: Rating does not bind to the photo properly. Binds at the collection level only. 
+
 **[TODOs/Product backlog](https://github.com/batmanimal/photo-app-backbone/issues)**
 
 ### Related Projects
